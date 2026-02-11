@@ -1,51 +1,33 @@
-# Práctica 3.2 – API REST con FastAPI y Base de Datos Persistente
+# Práctica 5.1 – Contenerización y Despliegue de una Aplicación Python
 **Nombre:** Ismael Franco Ruiz 2ºDAW
 
 ## Descripción
-Esta API gestiona un sistema de biblioteca con dos entidades principales: **Autores** y **Libros**. Permite realizar operaciones CRUD completas sobre ambos recursos, almacenando la información en una base de datos SQLite persistente.
+Esta práctica consiste en la evolución de una API REST (de la práctica 3.2) a un entorno de despliegue profesional utilizando **Docker**, **PostgreSQL** y **Render**.
 
-## Entidades
-### Autores
-- **id**: Identificador único (autogenerado).
-- **name**: Nombre del autor.
-- **bio**: Biografía breve.
-- **birth_date**: Fecha de nacimiento.
-- **nationality**: Nacionalidad.
+## Objetivos Cumplidos
+- [x] **Contenerización:** Creación de un `Dockerfile` para la aplicación FastAPI.
+- [x] **Orquestación:** Uso de `docker-compose.yml` para gestionar la API y la base de datos PostgreSQL.
+- [x] **Persistencia:** Implementación de volúmenes en Docker para mantener los datos.
+- [x] **Despliegue en la Nube:** Aplicación desplegada y funcionando en Render.
 
-### Libros
-- **id**: Identificador único (autogenerado).
-- **title**: Título del libro.
-- **description**: Descripción o sinopsis.
-- **publish_year**: Año de publicación.
-- **pages**: Número de páginas.
-- **author_id**: ID del autor (Clave foránea).
+## Captura del Despliegue en Render
+![Despliegue en Render](render_deployment.png)
 
-## Estructura del Proyecto
-```
-app/
-├── main.py             # Punto de entrada de la aplicación
-├── database/
-│   └── database.py     # Configuración de la base de datos
-├── models/
-│   └── models.py       # Modelos SQLAlchemy
-├── schemas/
-│   └── schemas.py      # Esquemas Pydantic
-└── routes/
-    ├── authors.py      # Rutas para Autores
-    └── books.py        # Rutas para Libros
-```
+## URL del Proyecto
+- **API Live:** [https://five-1finalpythonismael.onrender.com](https://five-1finalpythonismael.onrender.com)
+- **Documentación Swagger:** [https://five-1finalpythonismael.onrender.com/docs](https://five-1finalpythonismael.onrender.com/docs)
 
-## Cómo ejecutar el proyecto
+## Tecnologías Utilizadas
+- **Backend:** FastAPI (Python 3.12)
+- **Base de Datos:** PostgreSQL 15
+- **Contenedores:** Docker & Docker Compose
+- **Despliegue:** Render
 
-1. Instalar las dependencias:
+## Cómo ejecutar en local (Docker)
+1. Clonar el repositorio.
+2. Asegurarse de tener Docker Desktop iniciado.
+3. Ejecutar:
    ```bash
-   pip install -r requirements.txt
+   docker compose up -d
    ```
-
-2. Ejecutar el servidor:
-   ```bash
-   fastapi dev app/main.py
-   ```
-
-3. Acceder a la documentación interactiva:
-   [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+4. Acceder en `http://localhost:8000/docs`
