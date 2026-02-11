@@ -1,0 +1,45 @@
+### Interfaz de Swagger UI con todos los endpoints
+http://127.0.0.1:8000/docs
+
+### 1. Crear dinosaurio
+POST http://127.0.0.1:8000/dinosaurios/
+Content-Type: application/json
+
+{
+  "nombre": "Velociraptor",
+  "especie": "Velociraptor mongoliensis",
+  "periodo": "Cretácico",
+  "dieta": "Carnívoro",
+  "esta_extinto": true
+}
+
+### 2. Obtener todos
+GET http://127.0.0.1:8000/dinosaurios/
+
+### 3. Dinosaurio inexistente → 404
+GET http://127.0.0.1:8000/dinosaurios/999
+
+### 4. Actualizar dinosaurio
+PUT http://127.0.0.1:8000/dinosaurios/1
+Content-Type: application/json
+
+{
+  "nombre": "T-Rex (Adulto)",
+  "especie": "Tyrannosaurus rex",
+  "periodo": "Cretácico",
+  "dieta": "Carnívoro",
+  "esta_extinto": true
+}
+
+### 5. Eliminar dinosaurio
+DELETE http://127.0.0.1:8000/dinosaurios/2
+
+### 6. Error 422: datos inválidos
+POST http://127.0.0.1:8000/dinosaurios/
+Content-Type: application/json
+
+{
+  "nombre": "Invalido",
+  "periodo": 123,
+  "esta_extinto": "no lo se"
+}
