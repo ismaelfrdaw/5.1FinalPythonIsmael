@@ -11,7 +11,7 @@ Esta práctica consiste en la evolución de una API REST (de la práctica 3.2) a
 - [x] **Despliegue en la Nube:** Aplicación desplegada y funcionando en Render.
 
 ## Captura del Despliegue en Render
-![Despliegue en Render](render_deployment.png)
+![Despliegue en Render](renderbddpythonpractica.png)
 
 ## URL del Proyecto
 - **API Live:** [https://five-1finalpythonismael.onrender.com](https://five-1finalpythonismael.onrender.com)
